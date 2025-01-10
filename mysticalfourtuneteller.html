@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystical Fortune Teller</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: radial-gradient(circle, #2c3e50, #000);
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #fortune-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #fortune {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 20px 0;
+            min-height: 50px;
+        }
+
+        button {
+            background: #e67e22;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #d35400;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <h1>🔮 Mystical Fortune Teller 🔮</h1>
+    <div id="fortune-container">
+        <p id="fortune">Your fortune awaits...</p>
+        <button onclick="revealFortune()">Reveal My Fortune</button>
+    </div>
+
+    <script>
+        const fortunes = [
+            "You will find a hidden treasure! 🏴‍☠️",
+            "A big opportunity is coming your way! 🚀",
+            "Prepare for a surprise encounter! 🌟",
+            "An old friend will bring good news. 📜",
+            "Focus on your goals; success is near. 🏆",
+            "Adventure is calling, don’t miss it! 🗺️",
+            "Love is in the air! ❤️",
+            "Be patient; the answer will come. 🕰️",
+            "Your creativity will shine soon! 🎨",
+            "A relaxing vacation is on the horizon! 🏖️"
+        ];
+
+        function revealFortune() {
+            const randomIndex = Math.floor(Math.random() * fortunes.length);
+            const fortune = fortunes[randomIndex];
+            document.getElementById('fortune').textContent = fortune;
+        }
+    </script>
+</body>
+</html>
